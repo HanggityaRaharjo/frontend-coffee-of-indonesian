@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  border: 1px solid green;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1f3528;
+  border-radius: 10px;
+}
+
+.sidebar-open {
+  @apply fixed bg-[#1f3528] text-white z-[999] w-3/12 h-screen p-5 border-r-2 border-white;
+
+  animation-name: sidebar-muncul;
+  animation-duration: 0.5s;
+}
+.sidebar-close {
+  @apply fixed bg-[#1f3528] text-white z-[999] w-3/12 h-screen p-5 border-r-2 border-white;
+  transform: translate(-350px);
+  animation-name: sidebar-tutup;
+  animation-duration: 0.5s;
+}
+
+.nav-active {
+  @apply fixed flex justify-between items-center w-screen text-black border-b-2 bg-white z-20 py-5 px-14;
+
+  animation-name: nav-muncul;
+  animation-duration: 0.5s;
+}
+
+@keyframes nav-muncul {
+  from {
+    transform: translateY(-90px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes sidebar-muncul {
+  from {
+    transform: translate(-350px);
+  }
+  to {
+    transform: translate(0px);
+  }
+}
+
+@keyframes sidebar-tutup {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translate(-340px);
+  }
+}

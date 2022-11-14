@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+  border: 1px solid green;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1f3528;
+  border-radius: 10px;
+}
+
+.arrow-animate {
+  animation: arrowmove 2s infinite;
+}
+
+@keyframes arrowmove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
+.loading {
+  animation-name: animate-loading;
+  animation-duration: 2s;
+}
+
+.image-slider {
+  @apply w-screen h-screen;
+  animation: animate-slider;
+  animation-duration: 1s;
+}
+.image-slider-close {
+  @apply w-screen h-screen;
+  animation-name: animate-slider-close;
+  animation-duration: 1s;
+}
+
+@keyframes animate-slider {
+  from {
+    transform: scale(95%);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+@keyframes animate-slider-close {
+  from {
+    transform: scale(95%);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-loading {
+  from {
+    @apply fixed bg-white z-20 w-screen h-screen;
+  }
+  to {
+    @apply fixed bg-white z-0 w-screen h-screen hidden;
+  }
+}
+
+.sidebar-open {
+  @apply fixed bg-[#1f3528] text-white z-[999] w-3/12 h-screen p-5 border-r-2 border-white;
+
+  animation-name: sidebar-muncul;
+  animation-duration: 0.5s;
+}
+.sidebar-close {
+  @apply fixed bg-[#1f3528] text-white z-[999] w-3/12 h-screen p-5 border-r-2 border-white;
+  transform: translate(-340px);
+  animation-name: sidebar-tutup;
+  animation-duration: 0.5s;
+}
+
+.nav {
+  @apply fixed flex justify-between items-center w-screen text-white z-20 py-5 px-14;
+  animation-name: nav-muncul2;
+  animation-duration: 0.5s;
+}
+
+.nav-active {
+  @apply fixed flex justify-between items-center w-screen text-black border-b-2 bg-white z-20 py-5 px-14;
+
+  animation-name: nav-muncul;
+  animation-duration: 0.5s;
+}
+
+@keyframes nav-muncul2 {
+  from {
+    transform: translateY(-90px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes nav-muncul {
+  from {
+    transform: translateY(-90px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes sidebar-muncul {
+  from {
+    transform: translate(-340px);
+  }
+  to {
+    transform: translate(0px);
+  }
+}
+
+@keyframes sidebar-tutup {
+  from {
+    transform: translate(0px);
+  }
+  to {
+    transform: translate(-340px);
+  }
+}
